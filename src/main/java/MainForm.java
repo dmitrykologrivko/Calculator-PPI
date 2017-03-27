@@ -158,54 +158,13 @@ public class MainForm extends JFrame {
     }
 
     private void computation() {
-        double inch = 0;
-        double width = 0;
-        double heigth = 0;
-        double result = 0;
-        double fractionalPart = 0;
-        int integerPart = 0;
-        String classification = "";
+        double width = Double.valueOf(tfWidth.getText());
+        double height = Double.valueOf(tfHeight.getText());
+        double inch = Double.valueOf(tfInch.getText());
 
-        inch = Double.parseDouble(tfInch.getText());
-        width = Double.parseDouble(tfWidth.getText());
-        heigth = Double.parseDouble(tfHeight.getText());
+        double ppi = PpiHelper.ppi(width, height, inch);
+        String classification = PpiHelper.classification(ppi);
 
-        /* Получаем результат вычисляя согласно данной формуле: ppi = Sqrt((width^2 + heigth^2) / inch^2) */
-        /* Obtain the result calculated according to this formula: ppi = Sqrt((width^2 + heigth^2) / inch^2) */
-        result = Math.sqrt((Math.pow(width, 2) + Math.pow(heigth, 2)) / Math.pow(inch, 2));
-        /* Находим целую и дробую части */
-        /* Find integer and fractional parts */
-        integerPart = (int) result;
-        fractionalPart = result - integerPart;
-        /* Округляем если дробная часть больше 0.5 */
-        /* Rounding if fraction part >0.5 */
-        if (fractionalPart > 0.5) {
-            integerPart++;
-        }
-        /* Устанавливаем классификацию экрана, согласно результату */
-        /* Set classification screen */
-        if (result < 120) {
-            classification = "none";
-        }
-        if (result < 160 && result > 120 || result == 120) {
-            classification = "LDPI";
-        }
-        if (result < 240 && result > 160 || result == 160) {
-            classification = "MDPI";
-        }
-        if (result < 320 && result > 240 || result == 240) {
-            classification = "HDPI";
-        }
-        if (result < 480 && result > 320 || result == 320) {
-            classification = "XHDPI";
-        }
-        if (result < 640 && result > 480 || result == 480) {
-            classification = "XXHDPI";
-        }
-        if (result > 640 || result == 640) {
-            classification = "XXXHDPI";
-        }
-        JOptionPane.showMessageDialog(MainPanel, "PPI = " + integerPart + '\n' + "Classification: " + classification);
+        JOptionPane.showMessageDialog(MainPanel, "PPI = " + ppi + '\n' + "Classification: " + classification);
     }
-
 }
