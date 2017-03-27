@@ -61,7 +61,7 @@ public class MainForm extends JFrame {
     }
 
     private void calculate() {
-        if (validateSpaces()) {
+        if (isEmptyTextFields()) {
             JOptionPane.showMessageDialog(mainPanel,
                     errBundle.getString(MAIN_FILL_OUT_ALL_FIELDS));
             return;
@@ -103,7 +103,7 @@ public class MainForm extends JFrame {
         JOptionPane.showMessageDialog(mainPanel, mesBundle.getString(MAIN_HELP));
     }
 
-    private boolean validateSpaces() {
+    private boolean isEmptyTextFields() {
         return textInch.getText().length() == 0 || textWidth.getText().length() == 0 || textHeight.getText().length() == 0;
     }
 
