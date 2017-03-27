@@ -1,5 +1,3 @@
-package com.gmail.dmitrykologrivko.ppi_calc;
-
 import javax.swing.*;
 import java.awt.event.*;
 
