@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="calc_ppi:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/calc_ppi_jar</output-path>
-    <root id="archive" name="calc_ppi.jar">
-      <element id="module-output" name="calc_ppi" />
-    </root>
-  </artifact>
-</component>
