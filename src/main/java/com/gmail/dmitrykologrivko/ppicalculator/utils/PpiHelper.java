@@ -1,3 +1,5 @@
+package com.gmail.dmitrykologrivko.ppicalculator.utils;
+
 public class PpiHelper {
 
     public static final String NONE_CLASSIFICATION = "none";
