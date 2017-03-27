@@ -1,4 +1,4 @@
-package com.gmail.dmitrykologrivko.calc_ppi;
+package com.gmail.dmitrykologrivko.ppi_calc;
 
 public class Main {
 

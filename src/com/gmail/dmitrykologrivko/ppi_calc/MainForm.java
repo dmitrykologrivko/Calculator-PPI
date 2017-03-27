@@ -1,4 +1,4 @@
-package com.gmail.dmitrykologrivko.calc_ppi;
+package com.gmail.dmitrykologrivko.ppi_calc;
 
 import javax.swing.*;
 import java.awt.event.*;
