@@ -8,7 +8,7 @@
     <properties/>
     <border type="none" title-justification="2"/>
     <children>
-      <component id="dd994" class="javax.swing.JTextField" binding="tfInch">
+      <component id="dd994" class="javax.swing.JTextField" binding="editInch">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -16,15 +16,15 @@
         </constraints>
         <properties/>
       </component>
-      <component id="4c3a7" class="javax.swing.JLabel" binding="lInch">
+      <component id="4c3a7" class="javax.swing.JLabel" binding="textInch">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Диагональ (Inch)"/>
+          <text value="Inch"/>
         </properties>
       </component>
-      <component id="aa198" class="javax.swing.JTextField" binding="tfWidth">
+      <component id="aa198" class="javax.swing.JTextField" binding="editWidth">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -32,15 +32,15 @@
         </constraints>
         <properties/>
       </component>
-      <component id="bf3fe" class="javax.swing.JLabel" binding="lWidth">
+      <component id="bf3fe" class="javax.swing.JLabel" binding="textWidth">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Ширина (Width)"/>
+          <text value="Width"/>
         </properties>
       </component>
-      <component id="26c6" class="javax.swing.JTextField" binding="tfHeight">
+      <component id="26c6" class="javax.swing.JTextField" binding="editHeight">
         <constraints>
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -48,12 +48,12 @@
         </constraints>
         <properties/>
       </component>
-      <component id="2ce0d" class="javax.swing.JLabel" binding="lHeight">
+      <component id="2ce0d" class="javax.swing.JLabel" binding="textHeight">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Высота (Heigth)"/>
+          <text value="Height"/>
         </properties>
       </component>
       <grid id="71996" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -64,28 +64,28 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="df7da" class="javax.swing.JButton" binding="btnOK">
+          <component id="df7da" class="javax.swing.JButton" binding="buttonOk">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Вычислить (Calculate)"/>
+              <text value="Calculate"/>
             </properties>
           </component>
-          <component id="65595" class="javax.swing.JButton" binding="btnClear">
+          <component id="65595" class="javax.swing.JButton" binding="buttonClear">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Очистить (Clear)"/>
+              <text value="Clear fields"/>
             </properties>
           </component>
-          <component id="b05e2" class="javax.swing.JButton" binding="btnHelp">
+          <component id="b05e2" class="javax.swing.JButton" binding="buttonHelp">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Справка (Help)"/>
+              <text value="Help"/>
             </properties>
           </component>
         </children>

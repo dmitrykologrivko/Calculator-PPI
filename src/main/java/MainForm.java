@@ -4,15 +4,15 @@ import java.awt.event.*;
 public class MainForm extends JFrame {
 
     private JPanel MainPanel;
-    private JTextField tfInch;
-    private JTextField tfWidth;
-    private JTextField tfHeight;
-    private JButton btnOK;
-    private JLabel lInch;
-    private JLabel lWidth;
-    private JLabel lHeight;
-    private JButton btnClear;
-    private JButton btnHelp;
+    private JTextField editInch;
+    private JTextField editWidth;
+    private JTextField editHeight;
+    private JButton buttonOk;
+    private JLabel textInch;
+    private JLabel textWidth;
+    private JLabel textHeight;
+    private JButton buttonClear;
+    private JButton buttonHelp;
 
     public MainForm() {
         setContentPane(MainPanel);
@@ -20,7 +20,7 @@ public class MainForm extends JFrame {
         setSize(200, 285);
         setResizable(false);
         setLocationRelativeTo(null);
-        btnOK.addActionListener(new ActionListener() {
+        buttonOk.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 /* Вызывем метод проверки заполненности полей ввода */
@@ -28,25 +28,24 @@ public class MainForm extends JFrame {
                 checkSpace();
             }
         });
-        btnClear.addActionListener(new ActionListener() {
+        buttonClear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                tfInch.setText(null);
-                tfWidth.setText(null);
-                tfHeight.setText(null);
+                editInch.setText(null);
+                editWidth.setText(null);
+                editHeight.setText(null);
             }
         });
-        btnHelp.addActionListener(new ActionListener() {
+        buttonHelp.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(MainPanel, "RUS\nДиагональ может быть дробным числом.\nШирина и высота экрана " +
-                        "должны быть целыми числами. \nПример: диагональ = 4.5; ширина = 540; высота = 960; \nENG\nDiagonal(Inch) can be" +
+                JOptionPane.showMessageDialog(MainPanel, "Diagonal(Inch) can be" +
                         " a fractional number. \nThe width and height of the screen there must be a integer number. \nExample:" +
                         " diagonal(Inch) = 4.5; width = 540; height = 960;");
 
             }
         });
-        tfInch.addKeyListener(new KeyListener() {
+        editInch.addKeyListener(new KeyListener() {
 
             /* Переменная для блокировки повторной проверки символа '.' */
             /* Variable for block check char '.' */
@@ -57,7 +56,7 @@ public class MainForm extends JFrame {
                 char c = e.getKeyChar();
                 /* Снимаем блокировку проверки символа '.' если пользователь очистит поле ввода кнопкой clear на форме */
                 /* Unlocks check char '.' if user click button Clear in form */
-                if (tfInch.getText().length() == 0) {
+                if (editInch.getText().length() == 0) {
                     pointBlock = false;
                 }
                /* Условие сработает если пользователь очистит поле ввода кнопками back space или delete*/
@@ -99,20 +98,20 @@ public class MainForm extends JFrame {
                 /* Переменная для проверки на наличие более двух символов '.' в водимой строке */
                 /* Variable for check >2 characters '.' in typed string */
                 int j = 0;
-                if (tfInch.getText().length() == 1) {
+                if (editInch.getText().length() == 1) {
                     char c = e.getKeyChar();
                     /* Добавляем "0." в начало строки, если введеный первый символ '0' или '.' */
                     /* Add "0." in start line, if typed first char is '0' or '.' */
                     if (c == '0' || c == '.') {
-                        tfInch.setText("0.");
+                        editInch.setText("0.");
                     }
                 }
                 /* Для каждого симвода в введенной строке проверяем наличие более двух символов '.',
                 если условие выполняется, то включаем блокировку повторной проверки символа '.'  */
                 /* For each char in typed string: check >2 characters '.' if condition works - enabled
                 check char '.' */
-                for (int i = 0; i < tfInch.getText().length(); i++) {
-                    if (tfInch.getText().charAt(i) == '.') {
+                for (int i = 0; i < editInch.getText().length(); i++) {
+                    if (editInch.getText().charAt(i) == '.') {
                         j++;
                         if (j > 0) {
                             pointBlock = true;
@@ -121,7 +120,7 @@ public class MainForm extends JFrame {
                 }
             }
         });
-        tfWidth.addKeyListener(new KeyAdapter() {
+        editWidth.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
@@ -134,7 +133,7 @@ public class MainForm extends JFrame {
                 }
             }
         });
-        tfHeight.addKeyListener(new KeyAdapter() {
+        editHeight.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
@@ -150,17 +149,17 @@ public class MainForm extends JFrame {
     }
 
     private void checkSpace() {
-        if (tfInch.getText().length() == 0 || tfWidth.getText().length() == 0 || tfHeight.getText().length() == 0) {
-            JOptionPane.showMessageDialog(MainPanel, "Заполните все поля! \n\nFill out all input fields!");
+        if (editInch.getText().length() == 0 || editWidth.getText().length() == 0 || editHeight.getText().length() == 0) {
+            JOptionPane.showMessageDialog(MainPanel, "Fill out all input fields!");
             return;
         }
         computation();
     }
 
     private void computation() {
-        double width = Double.valueOf(tfWidth.getText());
-        double height = Double.valueOf(tfHeight.getText());
-        double inch = Double.valueOf(tfInch.getText());
+        double width = Double.valueOf(editWidth.getText());
+        double height = Double.valueOf(editHeight.getText());
+        double inch = Double.valueOf(editInch.getText());
 
         double ppi = PpiHelper.ppi(width, height, inch);
         String classification = PpiHelper.classification(ppi);
