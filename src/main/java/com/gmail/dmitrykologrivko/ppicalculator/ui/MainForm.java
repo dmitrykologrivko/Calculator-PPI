@@ -3,6 +3,7 @@ package com.gmail.dmitrykologrivko.ppicalculator.ui;
 import com.gmail.dmitrykologrivko.ppicalculator.utils.PpiHelper;
 
 import javax.swing.*;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import static com.gmail.dmitrykologrivko.ppicalculator.consts.Errors.*;
@@ -30,13 +31,21 @@ public class MainForm extends JFrame {
     private JButton buttonClear;
     private JButton buttonHelp;
 
+    // Default locale
+    private Locale defaultLocale;
+
     // Resource bundles
     private final ResourceBundle mesBundle;
     private final ResourceBundle errBundle;
 
     public MainForm() {
-        mesBundle = ResourceBundle.getBundle(MESSAGES);
-        errBundle = ResourceBundle.getBundle(ERRORS);
+        defaultLocale = new Locale("en", "US");
+
+        ResourceBundle.Control bundleControl =
+                ResourceBundle.Control.getNoFallbackControl(ResourceBundle.Control.FORMAT_PROPERTIES);
+
+        mesBundle = ResourceBundle.getBundle(MESSAGES, defaultLocale, bundleControl);
+        errBundle = ResourceBundle.getBundle(ERRORS, defaultLocale, bundleControl);
 
         setUpWindow();
         setUpViews();
