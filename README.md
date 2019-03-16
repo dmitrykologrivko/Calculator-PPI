@@ -1,4 +1,4 @@
-# ppi-calculator
+# PPI Calculator
 
 The PPI Calculator allows you to calculate the pixels per inch of your display based on its dimensions and the pixel count.
 
