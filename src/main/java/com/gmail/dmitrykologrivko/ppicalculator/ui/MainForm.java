@@ -13,7 +13,7 @@ import static com.gmail.dmitrykologrivko.ppicalculator.consts.ResourceBundles.*;
 public class MainForm extends JFrame {
 
     private static final int WINDOW_WIDTH = 200;
-    private static final int WINDOW_HEIGHT = 285;
+    private static final int WINDOW_HEIGHT = 300;
     private static final boolean WINDOW_VISIBLE = true;
     private static final boolean WINDOW_RESIZABLE = false;
 
